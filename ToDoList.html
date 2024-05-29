@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://th.bing.com/th/id/OIP.84IpsZX4Gu7oVqT6QhLilwHaD4?w=292&h=180&c=7&r=0&o=5&dpr=1.7&pid=1.7');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .todo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .todo input[type="text"] {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        .todo-list {
+            margin-top: 20px;
+        }
+        .main {
+            background: rgba(255, 255, 255, 0.8); /* Optional: adds a slight white background with transparency to the main container for readability */
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="mb-4">
+        <nav class="container d-flex justify-content-between align-items-center py-3">
+            <div class="logo d-flex align-items-center">
+                <img src="ToDo.png" alt="">
+                <p class="ml-2 mb-0">ToDo List</p>
+            </div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="ToDo.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="main" class="nav-link">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a href="main" class="nav-link">Sign in</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main container">
+        <div class="content">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="new-todo" placeholder="Add new todo">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="add-todo">Add</button>
+                </div>
+            </div>
+            <div class="todo-list" id="todo-list">
+               
+            </div>
+        </div>
+    </div>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('add-todo').addEventListener('click', function() {
+            const todoValue = document.getElementById('new-todo').value;
+            if (todoValue) {
+                const todoList = document.getElementById('todo-list');
+                const todoItem = document.createElement('div');
+                todoItem.className = 'input-group mb-3 todo';
+                todoItem.innerHTML = `
+                    <input type="text" class="form-control todo_value" value="${todoValue}" readonly>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <input type="checkbox" class="todo_checkbox">
+                        </div>
+                        <button class="btn btn-outline-danger" type="button">Delete</button>
+                    </div>
+                `;
+                todoList.appendChild(todoItem);
+                document.getElementById('new-todo').value = '';
+
+               
+                todoItem.querySelector('.btn-outline-danger').addEventListener('click', function() {
+                    todoList.removeChild(todoItem);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
