@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
+        
         body {
             font-family: Arial, sans-serif;
         }
+
         .hero-section {
             background: url('https://th.bing.com/th/id/OIP.H6pmBp10OQxF1MNF-MogAwHaEK?w=293&h=180&c=7&r=0&o=5&dpr=1.7&pid=1.7https://via.placeholder.com/1920x1080') no-repeat center center;
             background-size: cover;
@@ -16,36 +20,278 @@
             padding: 100px 0;
             text-align: center;
         }
+
         .hero-section h1 {
             font-size: 3rem;
         }
-        .features, .pricing, .contact {
-            padding: 50px 0;
+
+        /* Features Section */
+        .features {
+            background-color: #f8f9fa;
+            padding: 80px 0;
         }
+
+        .features h2 {
+            font-size: 2.5rem;
+            color: #343a40;
+            text-transform: uppercase;
+        }
+
+        .feature-item {
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon i {
+            color: #ff6600;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.5rem;
+            color: #343a40;
+        }
+
+        .feature-item p {
+            color: #777;
+            font-size: 1rem;
+        }
+
+        .features .row {
+            margin-bottom: 40px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .pricing h2 {
+            font-size: 2.5rem;
+            color: #343a40;
+            text-transform: uppercase;
+        }
+
+        .pricing-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .pricing-box {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-box h3 {
+            font-size: 2rem;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .pricing-box .price {
+            font-size: 2.5rem;
+            color: #ff6600;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .pricing-box ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .pricing-box ul li {
+            font-size: 1.1rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .pricing-box button {
+            background-color: #ff6600;
+            border: none;
+            padding: 12px 30px;
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pricing-box button:hover {
+            background-color: #ff8533;
+        }
+
+        .pricing .featured {
+            border: 2px solid #ff6600;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #ff8533;
+            transform: translateY(-5px);
+        }
+
+        /* Contact Section Styling */
+        .contact {
+            background: linear-gradient(135deg, #f8f9fa, #e0e0e0);
+            padding: 60px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-item i {
+            font-size: 3.5rem;
+            color: #ff6600;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover i {
+            color: #ff8533;
+        }
+
+        .contact-item h4 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .contact-item p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        /* Footer Styling */
         .footer {
             background-color: #343a40;
             color: white;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
+            border-top: 3px solid #ff6600;
+            font-family: 'Arial', sans-serif;
         }
+
+        .footer p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .footer a {
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #ff8533;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-item {
+                margin-bottom: 20px;
+            }
+
+            .contact h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact p {
+                font-size: 1rem;
+            }
+
+            .contact-item h4 {
+                font-size: 1.4rem;
+            }
+
+            .contact-item p {
+                font-size: 0.9rem;
+            }
+
+            .footer p {
+                font-size: 0.9rem;
+            }
+        }
+
         .navbar {
             background-color: #343a40;
         }
+
         .navbar-nav .nav-link {
             color: white !important;
         }
+
     </style>
+
+    
 </head>
+
 <body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="data:image/jpeg;base64,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" alt="Logo" style="width: 30px;">
+                <img src="data:image/jpeg;base64,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"
+                    alt="Logo" style="width: 30px;">
                 K&L
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -75,68 +321,115 @@
             <button class="btn btn-primary" onclick="showAlert()">Get Started</button>
         </div>
     </div>
-
     <!-- Features Section -->
     <div class="features" id="features">
         <div class="container">
-            <h2 class="text-center">Features</h2>
+            <h2 class="text-center mb-5">Our Features</h2>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs fa-3x"></i>
+                    </div>
                     <h3>Feature One</h3>
-                    <p>Details about feature one.</p>
+                    <p>Details about feature one. Our system helps you achieve great things with less effort, providing
+                        fast and efficient solutions.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-users fa-3x"></i>
+                    </div>
                     <h3>Feature Two</h3>
-                    <p>Details about feature two.</p>
+                    <p>Details about feature two. Our platform allows seamless collaboration and communication,
+                        empowering teams to work together effortlessly.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud fa-3x"></i>
+                    </div>
                     <h3>Feature Three</h3>
-                    <p>Details about feature three.</p>
+                    <p>Details about feature three. With our cloud-based services, your data is always safe and
+                        accessible from anywhere in the world.</p>
                 </div>
-                
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Feature One</h3>
-                    <p>Details about feature one.</p>
+
+            <div class="row mt-4">
+                <div class="col-md-4 feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt fa-3x"></i>
+                    </div>
+                    <h3>Feature Four</h3>
+                    <p>Details about feature four. We prioritize security, ensuring that your information and assets are
+                        always protected.</p>
                 </div>
-                <div class="col-md-4">
-                    <h3>Feature Two</h3>
-                    <p>Details about feature two.</p>
+                <div class="col-md-4 feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt fa-3x"></i>
+                    </div>
+                    <h3>Feature Five</h3>
+                    <p>Details about feature five. Speed is our forte; experience lightning-fast processing and
+                        responsiveness.</p>
                 </div>
-                <div class="col-md-4">
-                    <h3>Feature Three</h3>
-                    <p>Details about feature three.</p>
+                <div class="col-md-4 feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket fa-3x"></i>
+                    </div>
+                    <h3>Feature Six</h3>
+                    <p>Details about feature six. Our solutions are designed to scale with your business, growing as you
+                        grow.</p>
                 </div>
-                
             </div>
         </div>
     </div>
-    
 
     <!-- Pricing Section -->
     <div class="pricing" id="pricing">
         <div class="container">
-            <h2 class="text-center">Pricing</h2>
+            <h2 class="text-center mb-5">Choose Your Plan</h2>
             <div class="row">
-                <div class="col-md-4">
-                    <h3>Basic</h3>
-                    <p>₹1000/month</p>
-                    <p>Details about the basic plan.</p>
+                <div class="col-md-4 pricing-item">
+                    <div class="pricing-box">
+                        <h3>Basic</h3>
+                        <p class="price">₹1000/month</p>
+                        <ul>
+                            <li>1 User</li>
+                            <li>Basic Support</li>
+                            <li>5GB Storage</li>
+                        </ul>
+                        <p>Details about the basic plan. Perfect for individuals and small teams.</p>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h3>Standard</h3>
-                    <p>₹2000/month</p>
-                    <p>Details about the standard plan.</p>
+                <div class="col-md-4 pricing-item">
+                    <div class="pricing-box featured">
+                        <h3>Standard</h3>
+                        <p class="price">₹2000/month</p>
+                        <ul>
+                            <li>5 Users</li>
+                            <li>Priority Support</li>
+                            <li>50GB Storage</li>
+                        </ul>
+                        <p>Details about the standard plan. Ideal for growing businesses.</p>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h3>Premium</h3>
-                    <p>₹3000/month</p>
-                    <p>Details about the premium plan.</p>
+                <div class="col-md-4 pricing-item">
+                    <div class="pricing-box">
+                        <h3>Premium</h3>
+                        <p class="price">₹3000/month</p>
+                        <ul>
+                            <li>Unlimited Users</li>
+                            <li>24/7 Support</li>
+                            <li>500GB Storage</li>
+                        </ul>
+                        <p>Details about the premium plan. Best suited for large teams and enterprises.</p>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <!-- Contact Section -->
     <div class="contact" id="contact">
@@ -144,15 +437,18 @@
             <h2 class="text-center">Contact Us</h2>
             <p class="text-center">Get in touch with us through the following channels:</p>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 contact-item">
+                    <i class="fas fa-envelope"></i>
                     <h4>Email</h4>
                     <p>klinfo@example.com</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 contact-item">
+                    <i class="fas fa-phone-alt"></i>
                     <h4>Phone</h4>
                     <p>06255-789077</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
                     <h4>Address</h4>
                     <p>123 Main St, Rxl, India</p>
                 </div>
@@ -167,15 +463,17 @@
         </div>
     </div>
 
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-   
+
+
     <script>
         function showAlert() {
             alert('Thank you for getting started!');
         }
     </script>
 </body>
+
 </html>
